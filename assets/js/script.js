@@ -43,19 +43,19 @@ var btn_start = document.querySelector("#start-button");
 
 /*BODY SECTION SELECTORS */
 var panel_body = document.querySelector("#main");
-var panel_score = document.querySelector(".high-score");
+var panel_scoreboard = document.querySelector(".high-score");
 var panel_quiz = document.querySelector(".quiz");
 var panel_cd = document.querySelector("#countdown");
+var panel_endscore = document.querySelector("#score");
 
-/*SCORE SECTION SELECTORS*/
+/*HIGH SCORE SECTION SELECTORS*/
 var link_backhome = document.querySelector("#link_back");
 var list_score = document.querySelector("#highscore-list");
 
-// temporary keyin score
 // var frm_score = document.querySelector("#form-score");
-// var txt_name = document.querySelector("#txt-name");
+var txt_name = document.querySelector("#txt-name");
 // var txt_score = document.querySelector("#txt-score");
-// var btn_submit = document.querySelector("#btn-submit");
+var btn_submit = document.querySelector("#btn-submit");
 
 /*COUNTDOWN SECTION SELECTOR*/ 
 var lbl_countdown = document.querySelector("#lbl-cd");
@@ -65,55 +65,52 @@ var lbl_timer = document.querySelector("#timer-label");
 var lbl_question = document.querySelector("#question-label");
 var lst_answers = document.querySelector("#answer-list");
 
+/*QUIZ SCORE SECTION*/
+var lbl_user_score = document.querySelector("#user-score");
+
 /*VARIABLES*/
-var total_time = 120;
-var total_score = 0;
+var total_time;
+var total_score;
+var int_countdown;
 
 // START RUN
 function init() {
-    
     panel_header.setAttribute("class","show");
     panel_body.setAttribute("class", "hide");
     panel_cd.setAttribute("class", "hide");
     panel_quiz.setAttribute("class", "quiz hide");
-    panel_score.setAttribute("class", "high-score hide");
-  
+    panel_scoreboard.setAttribute("class", "high-score hide");
+    total_score = 0;
+    total_time = 10;
+    int_countdown = 3;
+    arr_scores = [];
+    arr_random = [];
 }
 
-// SAVING SCORE == USING FORM
-// function save_score(event) {
-//     event.preventDefault();
+//SAVING SCORE == USING FORM
+function save_score(event) {
 
-//     var new_scorer = {};
+    event.preventDefault();
 
-//     var val_name = txt_name.value.trim();
-//     var val_score = txt_score.value.trim();
+    load_score();
 
-//     if (val_name === "" && val_score === "") {
-//         console.log("No Name & Score");
-//         txt_name.focus();
-//         return;
-//     }else if (val_name === "" && val_score !== "") {
-//         console.log("No Name.");
-//         txt_name.focus();
-//         return;
-//     }else if (val_name !== "" && val_score === "") {
-//         console.log("No Score.");
-//         txt_score.focus();
-//         return;
-//     }else {
-//         new_scorer["name"] = val_name;
-//         new_scorer["score"] = val_score;
-//         arr_scores.push(new_scorer);
-//         localStorage.setItem(
-//           "scores", JSON.stringify(arr_scores)
-//         );
-//         txt_name.value = "";
-//         txt_score.value = "";
-//         txt_name.focus();
-//         view_score();
-//     }
-// }
+    var new_scorer = {};
+
+    var val_name = txt_name.value.trim();
+
+    if (val_name === "") {
+        txt_name.focus();
+    }else {
+        new_scorer["name"] = val_name;
+        new_scorer["score"] = total_score;
+        arr_scores.push(new_scorer);
+        localStorage.setItem(
+          "scores", JSON.stringify(arr_scores)
+        );
+        txt_name.textContent = "";
+        location.reload();
+    }
+}
 
 // LOAD SCORE
 function load_score() {
@@ -134,7 +131,8 @@ function load_score() {
 function view_score() {
     panel_header.setAttribute("class", "hide");
     panel_body.setAttribute("class", "show");
-    panel_score.setAttribute("class", "high-score show");
+    panel_scoreboard.setAttribute("class", "high-score show");
+    panel_endscore.setAttribute("class","hide");
 
     list_score.innerHTML = "";
 
@@ -164,11 +162,10 @@ function run_countdown() {
     panel_header.setAttribute("class", "hide");
     panel_body.setAttribute("class", "show");
     panel_cd.setAttribute("class", "show");
-    
-    var int_countdown = 3;
+
     var timer_cd = setInterval(function() {
-        int_countdown--;
         lbl_countdown.textContent = int_countdown;
+        int_countdown--;
         
         if(int_countdown < 0) {
             clearInterval(timer_cd);
@@ -185,7 +182,7 @@ function run_quiztimer() {
 
         if(total_time < 0) {
             clearInterval(timer_quiz);
-            panel_quiz.setAttribute("class","quiz hide");
+            set_score();
         }
     }, 1000);
 }
@@ -254,13 +251,13 @@ function run_questions() {
                 if (user_input === str_answer) {
                     //correct answer
                     total_score = total_score + str_q_score;
-                    console.log("Correct");
+                    //console.log("Correct");
                     generate_question();
                 }else {
                     //wrong answer
-                    console.log("Wrong");
+                    //console.log("Wrong");
                     var random_time = Math.floor(Math.random() * 5) + 6;
-                    console.log(random_time);
+                    //console.log(random_time);
                     total_time = total_time - random_time;
                     generate_question();
                 }
@@ -281,15 +278,16 @@ function run_questions() {
 // SCORE SECTION
 function set_score() {
     panel_quiz.setAttribute("class","quiz hide");
-    console.log("Quiz Done.");
-    console.log(total_score);
+    panel_endscore.setAttribute("class","show");
+
+    //console.log("Quiz Done.");
+    lbl_user_score.textContent = "Your score is : " + total_score;
+    //console.log(total_score);
 }
 
 link_score.addEventListener("click", view_score);
 link_backhome.addEventListener("click", init);
-// btn_submit.addEventListener("click", save_score);
+btn_submit.addEventListener("click", save_score);
 btn_start.addEventListener("click", run_countdown);
-
-
 
 init();
