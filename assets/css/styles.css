@@ -78,7 +78,6 @@ header {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -90,10 +89,10 @@ header {
 }
 
 button {
-	border-radius: 8px;
+	border-radius: 15px;
 	color: var(--super_black);
 	cursor: pointer;
-	font-size: 2em;
+	font-size: 1.5em;
 	letter-spacing: 0.2px;
 	line-height: 15px;
 	max-width: 220px;
@@ -102,15 +101,19 @@ button {
 	transition-duration: 0.15s;
 	transition-property: background-color;
 	transition-timing-function: linear;
-	margin-top: 0.6em;
+	margin: 0.5em;
+}
+
+button:hover {
+	color: var(--orange);
+	background-color: var(--super_black);
 }
 
 .header-note,
 .score-link {
-	width: 80%;
 	margin: 20px auto;
 	line-height: 1.5;
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 
 .score-link {
@@ -143,13 +146,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 50px;
-	width: 50%;
 	align-self: center;
 }
 
 .high-score div {
-	padding-bottom: 30px;
+	padding: 30px;
 }
 
 h1 {
@@ -161,6 +162,7 @@ h1 {
 
 .high-score ol {
 	list-style: decimal;
+	padding: 25px;
 }
 
 .high-score a {
@@ -182,7 +184,6 @@ h1 {
 /*QUIZ*/
 .timer-label {
 	padding: 50px;
-	height: 135px;
 }
 .answer-list {
 	display: flex;
@@ -210,11 +211,6 @@ h1 {
 	padding: 50px;
 }
 
-#score.show {
-	padding: 100px;
-	justify-content: center;
-}
-
 .user-score {
 	padding: 25px;
 }
@@ -231,34 +227,68 @@ h1 {
 	padding: 10px;
 }
 
-@media screen and (max-width: 1183px) {
-	main {
-		flex-direction: column;
+@media screen and (max-width: 900px) {
+	.header-note,
+	.score-link {
+		line-height: 1.5;
+		font-size: 1.2em;
 	}
-
-	.word-guess,
-	.results {
-		width: 90vw;
-	}
-
-	section {
-		background-color: var(--super_black);
-		margin: 20px auto;
-		width: 92vw;
+	.quiz.show {
+		padding: 0px;
 	}
 }
 
-@media screen and (max-width: 504px) {
+@media screen and (max-width: 730px) {
+	.header-note,
+	.score-link {
+		line-height: 1.2;
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 620px) {
 	.header-title {
-		font-size: 2em;
+		font-size: 2.5em;
 	}
 
-	.reset-button {
-		font-size: 12px;
-		width: 20ox;
+	.header-note,
+	.score-link {
+		line-height: 1;
+		font-size: 0.8em;
 	}
 
-	.timer {
-		height: 200px;
+	button {
+		font-size: 0.8em;
+		padding: 10px;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	ol,
+	li,
+	a,
+	div {
+		font-size: 0.8em;
+	}
+
+	.high-score div {
+		padding: 0px;
+	}
+
+	.timer-label {
+		padding: 0px;
+		height: 0px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	#form-score {
+		padding: 0px;
+	}
+	#txt-name {
+		height: 30px;
+		width: 250px;
 	}
 }

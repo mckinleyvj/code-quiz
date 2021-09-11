@@ -52,10 +52,6 @@ var panel_endscore = document.querySelector("#score");
 var link_backhome = document.querySelector("#link_back");
 var list_score = document.querySelector("#highscore-list");
 
-// var frm_score = document.querySelector("#form-score");
-var txt_name = document.querySelector("#txt-name");
-var btn_submit = document.querySelector("#btn-submit");
-
 /*COUNTDOWN SECTION SELECTOR*/ 
 var lbl_countdown = document.querySelector("#lbl-cd");
 
@@ -66,6 +62,8 @@ var lst_answers = document.querySelector("#answer-list");
 
 /*QUIZ SCORE SECTION*/
 var lbl_user_score = document.querySelector("#user-score");
+var txt_name = document.querySelector("#txt-name");
+var btn_submit = document.querySelector("#btn-submit");
 
 /*VARIABLES*/
 var total_time;
