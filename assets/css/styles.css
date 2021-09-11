@@ -1,0 +1,426 @@
+/*GLOBAL VARIABLES*/
+:root {
+	--alittle_black: rgb(25, 25, 25);
+	--alittle_purple: rgb(144 60 255);
+	--dirtywhite: rgb(223, 223, 223);
+	--super_black: rgb(0, 0, 0);
+	--orange: rgb(241 107 25 / 94%);
+	--shadow: rgb(204, 204, 204);
+	--gradient_black: rgb(0 0 0 / 95%);
+}
+
+* {
+	box-sizing: border-box;
+	/* font-size: 1em; */
+}
+
+h1,
+ol,
+li,
+a,
+div {
+	font-family: monospace;
+	color: var(--dirtywhite);
+	font-size: 1.3em;
+	line-height: 1.5;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+}
+
+body {
+	font-family: monospace;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: flex-start;
+	/* background: linear-gradient(
+		0deg,
+		var(--super_black) 0%,
+		var(--alittle_black) 63%
+	); */
+	/* background-color: var(--super_black); */
+	overflow: hidden;
+}
+
+/*TO HIDE & TO SHOW*/
+.hide {
+	display: none;
+	transition: 1000ms;
+}
+
+.high-score.hide {
+	display: none;
+	transition: 1000ms;
+}
+
+.high-score.show {
+	display: flex;
+	transition: 1000ms;
+}
+
+.show {
+	transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+	display: flex;
+	flex-direction: column;
+	height: 99.95vh;
+	width: 100%;
+	transition: 1000ms;
+}
+
+/*HEADER SECTION */
+header {
+	padding: 40px;
+	text-align: center;
+	background: #000000;
+	color: #fff;
+	border-bottom: 30px #879274;
+	height: 100%;
+}
+
+.header-inner {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-title {
+	font-size: 3.5em;
+	font-weight: bold;
+	text-align: center;
+	color: var(--orange);
+}
+
+button {
+	/* background: radial-gradient(
+		circle,
+		var(--dirtywhite) 0%,
+		var(--alittle_black) 100%
+	); */
+	border-radius: 8px;
+	color: var(--super_black);
+	cursor: pointer;
+	font-size: 2em;
+	letter-spacing: 0.2px;
+	line-height: 16px;
+	max-width: 255px;
+	padding: 20px 52px;
+	text-align: center;
+	transition-duration: 0.15s;
+	transition-property: background-color;
+	transition-timing-function: linear;
+	margin-top: 0.6em;
+}
+
+.header-note,
+.score-link {
+	width: 80%;
+	margin: 20px auto;
+	line-height: 1.5;
+	font-size: 1.8em;
+}
+
+.score-link {
+	margin-top: 30px;
+}
+
+.score-link {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.score-link:hover {
+	color: var(--orange);
+	transition: 500ms;
+}
+
+/*BODY SECTION*/
+main {
+	padding: 40px;
+	text-align: center;
+	background-color: var(--super_black);
+	color: var(--dirtywhite);
+	border-bottom: 30px #879274;
+	height: 100%;
+}
+
+/* SCORE SECTION */
+.high-score {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	width: 50%;
+	align-self: center;
+	/* margin-bottom: 10%; */
+}
+
+.high-score div {
+	padding-bottom: 30px;
+}
+
+h1 {
+	font-size: 3.5em;
+	font-weight: bold;
+	text-align: center;
+	color: var(--orange);
+}
+
+.high-score ol {
+	list-style: decimal;
+}
+
+.high-score a {
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+.high-score a:hover {
+	color: var(--orange);
+	cursor: pointer;
+	transition: 500ms;
+}
+
+/*COUNTDOWN*/
+#countdown {
+	justify-content: center;
+}
+
+/*QUIZ*/
+.timer-label {
+	padding: 50px;
+	height: 135px;
+}
+.answer-list {
+	display: flex;
+}
+
+#answer-list {
+	/* width: 50%; */
+	margin: 0 auto;
+	font-size: 1em;
+	cursor: pointer;
+}
+.show-bullet {
+	list-style: decimal;
+}
+
+.show-bullet:hover {
+	color: var(--orange);
+	text-decoration: underline;
+}
+
+.quiz.show {
+	padding: 100px;
+}
+
+.question-label {
+	padding: 50px;
+}
+
+@media screen and (max-width: 1183px) {
+	main {
+		flex-direction: column;
+	}
+
+	.word-guess,
+	.results {
+		width: 90vw;
+	}
+
+	section {
+		background-color: var(--super_black);
+		margin: 20px auto;
+		width: 92vw;
+	}
+}
+
+@media screen and (max-width: 504px) {
+	.header-title {
+		font-size: 2em;
+	}
+
+	.reset-button {
+		font-size: 12px;
+		width: 20ox;
+	}
+
+	.timer {
+		height: 200px;
+	}
+}
+
+/* ANIMATION//TRANSITION
+<div class="panel" id="home">
+    <h1>Pure CSS panels</h1> 
+</div>
+
+
+<div class="panel" id="slice">
+    <div class="panel__content">
+        <a href="#home">
+            Close me.
+        </a>
+    </div>
+</div>
+
+
+<div class="panel" id="fade">
+    <div class="panel__content">
+        <a href="#home">Close me.</a>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="menu">
+  <a class="menu__link" href="#slice" data-hover="Slice">Slice</a>
+  <a class="menu__link" href="#fade" data-hover="Fade">Fade</a> 
+</div> */
+
+/* CSS
+
+/* basic style definition */
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+
+/* body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Roboto Slab', serif; }
+	
+	
+	h1 {
+	margin: 0;
+	user-select: none;
+	text-align: center;
+	font-weight: 300; }
+	
+	
+	p, {
+	font-weight: 300;
+	color: #546E7A;
+	user-select: none;
+	text-align: center;
+	margin: 0; }
+	
+	
+	a { 
+	text-align: center;
+	text-decoration: none;
+	color: #FFF; }
+	
+	/* Navigation menu */
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+/*
+	.menu {
+	position: fixed;
+	width: 100vw;
+	pointer-events: none;
+	margin-top: 10vh;
+	text-align: center;
+	z-index: 2; }
+	
+	/* Menu link item */
+/* .menu__link {
+	display: inline-block;
+	text-decoration: none;
+	border: 2px solid #263238;
+	color: #263238; 
+	pointer-events: auto;
+	line-height: 40px; 
+	position: relative;
+	padding: 0 50px; 
+	box-sizing: border-box;
+	margin: 0;
+	user-select: none;
+	overflow: hidden;
+	border-radius: 50px; */
+
+/* &::before {
+	  content: attr(data-hover);
+	  background-color: #263238; 
+	  color: #FFF;
+	  position: absolute;
+	  top: 100%;
+	  bottom: 0;
+	  left: 0;
+	  transition: all 300ms cubic-bezier(0.190, 1.000, 0.560, 1.000);
+	  right: 0; } */
+
+/* &:hover::before {
+	  top: 0; }
+	}
+	 */
+/* Panels Style*/
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+
+/* Common panel style
+	.panel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	z-index: 999;
+	color: #000;
+	box-sizing: border-box;
+	background-color: #ECEFF1; }
+	 */
+
+/* panel content (only for animation delay after open) */
+/* .panel__content {
+	opacity: 0;
+	will-change: margin-top;
+	transition: all 700ms; 
+	transition-delay: 600ms;
+	padding: 100px 200px;
+	margin-top: -5%; } */
+
+/* Panel content animation after open */
+/* .panel:target .panel__content {
+	opacity: 1;
+	margin-top: 0; }
+	 */
+
+/*  Specific "Home "panel */
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+/* 	
+	.panel#home {
+	z-index: 1;
+	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,#CFD8DC 100%); }
+	 */
+
+/*  Specific panel "Slice" */
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+
+/* .panel#slice {
+	background-color: #E53935;
+	transition: all 800ms cubic-bezier(0.190, 1.000, 0.560, 1.000);
+	transform: translate3d( 0, -100%, 0 ); }
+	
+	.panel#slice:target {
+	transform: translate3d( 0, 0, 0 ); } */
+
+/*  Specific panel "Fade" effect */
+/* ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ */
+/* 	
+	.panel#fade {
+	background-color: #00C853;
+	opacity: 0;
+	transition: all 800ms;
+	pointer-events: none; }
+	
+	.panel#fade:target {
+	opacity: 1;
+	pointer-events: auto; } */

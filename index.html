@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEV_Mac // Code Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <!--START SECTION-->
+    <header id="header" class="show">
+        <section class="header-inner">
+            <div class="header-title">Code Quiz</div>
+            <div class="header-note">
+            Try to answer all the questions in this quiz before the timer runs out.<br/>
+            Each wrong answer will be penalized by deducting few seconds off the timer.<br/>
+            Each correct answer will be added to your final score.<br/><br/>
+            Press `Start` to begin.
+            </div>
+            <button id="start-button" class="start-button">Start</button>
+            <br><br>
+            <span id="score-link" class="score-link">View High Scores</span>
+        </section>
+    </header>
+
+    <main id="main" class="hide">
+    <!--SCORE SECTION-->
+      <section id="high-score" class="high-score hide">
+            <div><a id="link_back">Back to Home</a></div>
+            <h1>Code Quiz High Scores</h1>
+            <ol id="highscore-list">
+            </ol>
+      </section>
+
+      <!--COUNTDOWN SCREEN-->
+      <section id="countdown" class="hide">
+          <h1 id="lbl-cd"></h1>
+      </section>
+
+      <!--QUIZ SECTION-->
+      <section id="quiz" class="quiz hide">
+        <div class="quiz-header">
+            <div id="timer-label" class="timer-label"></div>
+        </div>
+        <div>
+            <div id="question-label" class="question-label"></div>
+        </div>
+        <div class="answer-list">
+            <ol id="answer-list">
+            </ol>
+        </div>
+      </section>
+
+      <!--SCORE SCREEN-->
+      <!-- <section>
+        <form id="form-score" method="POST">
+                <input type="text" placeholder="Your Alias..." name="txt-name" id="txt-name" />
+                <input type="text" placeholder="Score..." name="txt-score" id="txt-score" />
+                <button id="btn-submit">Submit</button>
+            </form>
+        </section> -->
+    </main>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
