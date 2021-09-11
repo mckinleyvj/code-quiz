@@ -54,7 +54,6 @@ var list_score = document.querySelector("#highscore-list");
 
 // var frm_score = document.querySelector("#form-score");
 var txt_name = document.querySelector("#txt-name");
-// var txt_score = document.querySelector("#txt-score");
 var btn_submit = document.querySelector("#btn-submit");
 
 /*COUNTDOWN SECTION SELECTOR*/ 
@@ -188,7 +187,6 @@ function run_quiztimer() {
 }
 
 function run_quiz() {
-    
     panel_cd.setAttribute("class", "hide");
     panel_quiz.setAttribute("class","quiz show");
 
@@ -196,7 +194,6 @@ function run_quiz() {
 
     run_quiztimer();
     run_questions();
-    
 }
 
 function run_questions() {
@@ -209,7 +206,6 @@ function run_questions() {
         var int_random = Math.floor(Math.random() * questions.length)
 
         if (arr_random.length != questions.length) {
-            //if (x in arr_random === true) {
             if (arr_random.includes(int_random)) {
                 generate_question();
             }else {
@@ -240,7 +236,6 @@ function run_questions() {
     }
     
     function get_answer(user_input) {
-        
         var answer_index;
         var str_answer;
 
@@ -251,13 +246,10 @@ function run_questions() {
                 if (user_input === str_answer) {
                     //correct answer
                     total_score = total_score + str_q_score;
-                    //console.log("Correct");
                     generate_question();
                 }else {
                     //wrong answer
-                    //console.log("Wrong");
                     var random_time = Math.floor(Math.random() * 5) + 6;
-                    //console.log(random_time);
                     total_time = total_time - random_time;
                     generate_question();
                 }
@@ -280,9 +272,7 @@ function set_score() {
     panel_quiz.setAttribute("class","quiz hide");
     panel_endscore.setAttribute("class","show");
 
-    //console.log("Quiz Done.");
     lbl_user_score.textContent = "Your score is : " + total_score;
-    //console.log(total_score);
 }
 
 link_score.addEventListener("click", view_score);
