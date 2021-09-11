@@ -81,7 +81,7 @@ function init() {
     panel_quiz.setAttribute("class", "quiz hide");
     panel_scoreboard.setAttribute("class", "high-score hide");
     total_score = 0;
-    total_time = 10;
+    total_time = 120;
     int_countdown = 3;
     arr_scores = [];
     arr_random = [];
