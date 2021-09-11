@@ -7,5 +7,5 @@
 ## Screenshots:
 
 ## Related Links:
-- GitHub Repository: 
-- GitHub Live URL:
+- GitHub Repository: https://github.com/mckinleyvj/code-quiz
+- GitHub Live URL: https://mckinleyvj.github.io/code-quiz/
