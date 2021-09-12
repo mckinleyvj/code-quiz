@@ -2,10 +2,24 @@
 
 ## Repository Description:
 
+-   This is a web development code quiz page. It will ask a series of question within a duration of 1 minute and 30 seconds.
+-   Every correct answer will proceed to the next question with a score.
+-   Every wrong answer will deduct few seconds off the timer.
+-   Scores will be recorded.
+
 ## Jobs done:
+
+-   Created home page and high score section. Created local storage for high scores showing up to top 10.
+-   Created logic for saving and retrieving data from local storage.
+-   Created countdown page and initial questions for quiz.
+-   Created end quiz section with input.
+-   Modified, tested and rectified logical flow of quiz.
+-   Created arrays of questions and answers with scores.
+-   Finalize design, added questions and answers and checking of correct page flow.
 
 ## Screenshots:
 
 ## Related Links:
-- GitHub Repository: https://github.com/mckinleyvj/code-quiz
-- GitHub Live URL: https://mckinleyvj.github.io/code-quiz/
+
+-   GitHub Repository: https://github.com/mckinleyvj/code-quiz
+-   GitHub Live URL: https://mckinleyvj.github.io/code-quiz/

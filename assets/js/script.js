@@ -191,7 +191,7 @@ function init() {
     panel_quiz.setAttribute("class", "quiz hide");
     panel_scoreboard.setAttribute("class", "high-score hide");
     total_score = 0;
-    total_time = 120;
+    total_time = 90;
     int_countdown = 3;
     arr_scores = [];
     arr_random = [];
@@ -345,7 +345,7 @@ function run_questions() {
             set_score();
         }
     }
-    
+
     function get_answer(user_input) {
         var answer_index;
         var str_answer;
@@ -360,6 +360,7 @@ function run_questions() {
                     generate_question();
                 }else {
                     //wrong answer
+                    lbl_timer.setAttribute("color", "red")
                     var random_time = Math.floor(Math.random() * 5) + 6;
                     total_time = total_time - random_time;
                     generate_question();
