@@ -27,6 +27,12 @@ High Score Section
 ![image](https://user-images.githubusercontent.com/87624839/132992337-d94003ca-2a3e-4b54-894d-4caa424df413.png)
 Countdown Section
 
+![image](https://user-images.githubusercontent.com/87624839/132992372-68c50364-94ac-4145-ae51-1d002f84e2ba.png)
+Quiz Section
+
+![image](https://user-images.githubusercontent.com/87624839/132992388-4cf6c68c-f88c-4952-a329-d52bf2ff6e54.png)
+User Score Section
+
 ## Related Links:
 
 -   GitHub Repository: https://github.com/mckinleyvj/code-quiz
