@@ -16,10 +16,8 @@
       <section class="header-inner">
         <div class="header-title">Code Quiz</div>
         <div class="header-note">
-        Try to answer all the questions in this quiz before the timer runs out.<br/>
-        Each wrong answer will be penalized by deducting few seconds off the timer.<br/>
-        Each correct answer will be added to your final score.<br/><br/>
-        Press `Start` to begin.
+        Try to answer all the questions in this quiz before the timer runs out. Each wrong answer will be penalized by deducting few seconds off the timer. Each correct answer will be added to your final score.<br/><br/>
+        Press <span>`Start`</span> to begin.
         </div>
         <button id="start-button" class="start-button">Start</button>
         <span id="score-link" class="score-link">View High Scores</span>
@@ -29,7 +27,7 @@
     <main id="main" class="hide">
       <!--HIGH SCORE SECTION-->
       <section id="high-score" class="high-score hide">
-        <h1>Code Quiz High Scores</h1>
+        <h1>High Score</h1>
         <ol id="highscore-list">
         </ol>
         <div><a id="link_back">Back to Home</a></div>
@@ -58,7 +56,7 @@
         <h1>End of Quiz</h1>
         <div id="user-score" class="user-score"></div>
         <form id="form-score" method="POST">
-          <input type="text" placeholder="Your Alias..." name="txt-name" id="txt-name" /><br>
+          <input type="text" placeholder="Enter your name" name="txt-name" id="txt-name" /><br>
           <button id="btn-submit">Submit</button>
         </form>
       </section>

@@ -4,25 +4,25 @@ var arr_random = [];
 var storedScores;
 var questions = [
     {
-        "q":"Q. True or False: HTML is a coding language used to create web pages.",
+        "q":"True or False: HTML is a coding language used to create web pages.",
         "a":["True","False"],
         "index":1,
         "score":5
     },
     {
-        "q":"Q. The ____ tag set provides information to the browser about your webpage including the author name and keywords.",
+        "q":"The ____ tag set provides information to the browser about your webpage including the author name and keywords.",
         "a":["<style></style>","<body></body>","<meta></meta>","<html></html>"],
         "index":2,
         "score":10
     },
     {
-        "q":"Q. Items in a(n) list are preceded by numbers.",
+        "q":"Items in a(n) list are preceded by numbers.",
         "a":["unordered","bulleted","grocery","ordered",],
         "index":3,
         "score":5
     },
     {
-        "q":"Q. Where is the correct place to put the title tag in an HTML document?",
+        "q":"Where is the correct place to put the title tag in an HTML document?",
         "a":["Above the HTML tag","In the head of the document","In the body of the document","It doesn't matter",],
         "index":4,
         "score":10
