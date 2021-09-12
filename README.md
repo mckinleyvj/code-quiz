@@ -9,10 +9,10 @@
 
 ## Jobs done:
 
--   Created home page and high score section. Created local storage for high scores showing up to top 10.
+-   Created home page and high score section. Created local storage for high scores showing up to top 10 users.
 -   Created logic for saving and retrieving data from local storage.
 -   Created countdown page and initial questions for quiz.
--   Created end quiz section with input.
+-   Created end-quiz section with user input.
 -   Modified, tested and rectified logical flow of quiz.
 -   Created arrays of questions and answers with scores.
 -   Finalize design, added questions and answers and checking of correct page flow.
