@@ -10,21 +10,117 @@ var questions = [
         "score":5
     },
     {
-        "q":"The ____ tag set provides information to the browser about your webpage including the author name and keywords.",
+        "q":"The __ tag set provides information to the browser about your webpage including the author name and keywords.",
         "a":["<style></style>","<body></body>","<meta></meta>","<html></html>"],
         "index":2,
         "score":10
     },
     {
         "q":"Items in a(n) list are preceded by numbers.",
-        "a":["unordered","bulleted","grocery","ordered",],
+        "a":["unordered","bulleted","grocery","ordered"],
         "index":3,
         "score":5
     },
     {
         "q":"Where is the correct place to put the title tag in an HTML document?",
-        "a":["Above the HTML tag","In the head of the document","In the body of the document","It doesn't matter",],
+        "a":["Above the HTML tag","In the head of the document","In the body of the document","It doesn't matter"],
         "index":4,
+        "score":10
+    },
+    {
+        "q":"True or False: The order of your <html>,<head>,and <body> tags is not important.",
+        "a":["True","False"],
+        "index":5,
+        "score":5
+    },
+    {
+        "q":"What does CSS stand for?",
+        "a":["Custom Style Sheets","Computer Style Sheets","Cascading Style Sheets","Colorful Style Sheets"],
+        "index":6,
+        "score":10
+    },
+    {
+        "q":"The # symbol stands for what selector?",
+        "a":["tag","id","first","class"],
+        "index":7,
+        "score":5
+    },
+    {
+        "q":"Inside which HTML element do we put the JavaScript?",
+        "a":["<js>","<script>","<javascript>","<scripting>"],
+        "index":8,
+        "score":5
+    },
+    {
+        "q":"Where is the correct place to insert a JavaScript?",
+        "a":["Both the <head> section and the <body> section are correct","The <body> section","The <head> section"],
+        "index":9,
+        "score":10
+    },
+    {
+        "q":"What is the correct syntax for referring to an external script called 'xxx.js'?",
+        "a":["<script href='xxx.js'>","<script name='xxx.js'>","<script src='xxx.js'>"],
+        "index":10,
+        "score":10
+    },
+    {
+        "q":"The external JavaScript file must contain the <script> tag.",
+        "a":["True","False"],
+        "index":11,
+        "score":5
+    },
+    {
+        "q":"How do you write 'Hello World' in an alert box?",
+        "a":["alert('Hello World');","alertbox('Hello World');","msgBox('Hello World');","msg('Hello World);"],
+        "index":12,
+        "score":15
+    },
+    {
+        "q":"How do you create a function in JavaScript?",
+        "a":["function myFunction()","function = myFunction()","function:myFunction()"],
+        "index":13,
+        "score":15
+    },
+    {
+        "q":"How do you call a function named 'myFunction'?",
+        "a":["call function myFunction()","call myFunction()","myFunction()"],
+        "index":14,
+        "score":15
+    },
+    {
+        "q":"How to write an IF statement in JavaScript?",
+        "a":["if i == 5 then","if i = 5 then","if i = 5","if (i == 5)"],
+        "index":15,
+        "score":15
+    },
+    {
+        "q":"How does a WHILE loop start?",
+        "a":["while i = 1 to 10","while (i <= 10; i++)","while (i <= 10)"],
+        "index":16,
+        "score":15
+    },
+    {
+        "q":"How does a FOR loop start?",
+        "a":["for i=1 to 5","for (i=0;i<=5;i++)","for(i=0;i<=5)","for(i<=5;i++)"],
+        "index":17,
+        "score":15
+    },
+    {
+        "q":"What do you use to add a comment in a HTML?",
+        "a":["'","//","<!-- -->"],
+        "index":18,
+        "score":10
+    },
+    {
+        "q":"How to insert a comment that has more than one line in Javascript?",
+        "a":["<!-- -->","/* */","// //"],
+        "index":19,
+        "score":10
+    },
+    {
+        "q":"What is the correct way to write a JavaScript array?",
+        "a":["var arr = (red,blue,green)","var arr = (1:'red',2:'blue',3:'green')","var arr = ['red','blue','green']"],
+        "index":20,
         "score":10
     },
 ];
@@ -33,7 +129,24 @@ var answers = [
     {"index":1,"a":"True"},
     {"index":2,"a":"<meta></meta>"},
     {"index":3,"a":"ordered"},
-    {"index":4,"a":"In the head of the document"}
+    {"index":4,"a":"In the head of the document"},
+    {"index":5,"a":"False"},
+    {"index":6,"a":"Cascading Style Sheets"},
+    {"index":7,"a":"id"},
+    {"index":8,"a":"<script>"},
+
+    {"index":9,"a":"Both the <head> section and the <body> section are correct"},
+    {"index":10,"a":"<script src='xxx.js'>"},
+    {"index":11,"a":"False"},
+    {"index":12,"a":"alert('Hello World');"},
+    {"index":13,"a":"function myFunction()"},
+    {"index":14,"a":"myFunction()"},
+    {"index":15,"a":"if (i == 5)"},
+    {"index":16,"a":"while (i <= 10)"},
+    {"index":17,"a":"for (i=0;i<=5;i++)"},
+    {"index":18,"a":"<!-- -->"},
+    {"index":19,"a":"/* */"},
+    {"index":20,"a":"var arr = ['red','blue','green']"},
 ];
 
 /*HEADER SECTION SELECTORS*/
@@ -216,7 +329,7 @@ function run_questions() {
                 str_q_index = str_question["index"];
                 str_q_score = str_question["score"];
 
-                lbl_question.textContent = str_question["q"] + " (Score: " + str_q_score + ")";
+                lbl_question.textContent = str_question["q"];
 
                 for (var x = 0; x < str_question["a"].length; x++ ) {
                     var ans = str_question["a"][x];
