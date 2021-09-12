@@ -18,6 +18,14 @@
 -   Finalize design, added questions and answers and checking of correct page flow.
 
 ## Screenshots:
+![image](https://user-images.githubusercontent.com/87624839/132992311-d00d4707-7b26-4c77-a8e4-7c4bdbf5f08b.png)
+Start Page
+
+![image](https://user-images.githubusercontent.com/87624839/132992321-d86e4089-7709-49d0-bf97-46f38955ad17.png)
+High Score Section
+
+![image](https://user-images.githubusercontent.com/87624839/132992337-d94003ca-2a3e-4b54-894d-4caa424df413.png)
+Countdown Section
 
 ## Related Links:
 
