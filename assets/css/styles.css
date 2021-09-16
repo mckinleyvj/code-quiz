@@ -288,7 +288,7 @@ h1 {
 	}
 	.header-inner,
 	.high-score {
-		justify-content: space-evenly;
+		justify-content: center;
 	}
 	.high-score li {
 		line-height: 1.5em;
