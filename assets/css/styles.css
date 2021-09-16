@@ -232,6 +232,11 @@ h1 {
 	text-decoration: underline;
 }
 
+.show-bullet:active {
+	color: var(--orange);
+	text-decoration: underline;
+}
+
 .question-label {
 	font-size: 1.8em;
 }
