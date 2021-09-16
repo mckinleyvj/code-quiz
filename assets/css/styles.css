@@ -198,6 +198,7 @@ h1 {
 .answer-list {
 	display: flex;
 	padding: 30px;
+	user-select: none;
 }
 
 #answer-list {
@@ -207,18 +208,23 @@ h1 {
 }
 
 #answer-list li {
-	line-height: 2.5em;
+	/* line-height: 2.5em; */
 	font-size: 1.5em;
+	user-select: contain;
 }
 
-#answer-list li:active {
+/* #answer-list li:active {
 	color: var(--orange);
-}
+} */
 
 .show-bullet {
 	list-style: decimal;
 	padding-left: 20px;
 	text-align: left;
+	font-weight: bolder;
+	background-color: var(--super_black);
+	padding-bottom: 40px;
+	line-height: none;
 }
 
 .show-bullet:hover {
@@ -277,7 +283,7 @@ h1 {
 	}
 	.header-inner,
 	.high-score {
-		justify-content: flex-start;
+		justify-content: space-evenly;
 	}
 	.high-score li {
 		line-height: 1.5em;
@@ -287,7 +293,7 @@ h1 {
 	}
 	#answer-list li {
 		font-size: 1.1em;
-		line-height: 3em;
+		/* line-height: 3em; */
 	}
 	.high-score div {
 		padding: 15px;
@@ -358,7 +364,7 @@ h1 {
 	}
 	#answer-list li {
 		font-size: 1em;
-		line-height: 2.5em;
+		/* line-height: 2.5em; */
 	}
 }
 

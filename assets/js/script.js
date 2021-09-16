@@ -172,6 +172,7 @@ var lbl_countdown = document.querySelector("#lbl-cd");
 var lbl_timer = document.querySelector("#timer-label");
 var lbl_question = document.querySelector("#question-label");
 var lst_answers = document.querySelector("#answer-list");
+var answerList = document.querySelector("#show-bullet");
 
 /*QUIZ SCORE SECTION*/
 var lbl_user_score = document.querySelector("#user-score");
@@ -338,12 +339,17 @@ function run_questions() {
                     li.setAttribute("class", "show-bullet");
                         
                     lst_answers.appendChild(li);
+
+                    li.addEventListener
                 }
+
+
             }
         }else {
             //if every question is asked, set it to scoreboard.
             set_score();
         }
+
     }
 
     function get_answer(user_input) {
@@ -371,7 +377,6 @@ function run_questions() {
     }
 
     generate_question();
-
     lst_answers.addEventListener("click", function(event) {
         var element = event.target;
         var str_user_answer = element.textContent;
@@ -391,5 +396,5 @@ link_score.addEventListener("click", view_score);
 link_backhome.addEventListener("click", init);
 btn_submit.addEventListener("click", save_score);
 btn_start.addEventListener("click", run_countdown);
-
+   
 init();
